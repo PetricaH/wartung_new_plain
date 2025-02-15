@@ -1,0 +1,179 @@
+@media (max-width: 768px) {
+    #nav_menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        /* edit to 0 and 0 to go back */
+        max-height: 0;
+        opacity: 0;
+        /*  */
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        background-color: rgba(15, 20, 19, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    #nav_menu.active {
+        max-height: 100vh; /* Expand to full height */
+        opacity: 1; /* Fully visible */
+        border-radius: 15px;
+    }
+
+    /* Menu items animation */
+    #nav_menu li {
+        list-style: none;
+        opacity: 0; /* Start hidden */
+        transform: translateY(20px); /* Positioned slightly lower */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and slide */
+        text-align: right;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+
+    #nav_menu.active li {
+        top: 50%;
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Reset position */
+    }
+
+    #nav_menu.active li a  {
+        color: #f2f2f2;
+        text-decoration: none;
+    }
+
+    /* Staggered animation for list items */
+    #nav_menu.active li:nth-child(1) {
+        transition-delay: 0.3s;
+    }
+    #nav_menu.active li:nth-child(2) {
+        transition-delay: 0.4s;
+    }
+    #nav_menu.active li:nth-child(3) {
+        transition-delay: 0.5s;
+    }
+    #nav_menu.active li:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    #nav_menu.active li:nth-child(5) {
+        transition-delay: 0.7s;
+    }
+
+    #nav_menu li a {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-size: 24px;
+    }
+
+    .menu_toggle {
+        z-index: 9999 !important;
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Ensure nav_menu styling for wider screens */
+    #nav_menu {
+        width: 70%;
+        display: flex;
+        list-style-type: none;
+        gap: 30px;
+        justify-content: center; /* Center the menu items */
+        align-items: center; /* Align menu items vertically */
+        position: static; /* Default position for desktop */
+        height: auto; /* Remove fixed height for larger screens */
+        opacity: 1; /* Fully visible by default */
+    }
+
+    #nav_menu > li > a {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-size: 16px; /* Adjust font size for wider screens */
+        padding: 10px 15px; /* Add padding for easier clickability */
+    }
+
+    /* Remove animations for wider screens if not needed */
+    #nav_menu li {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none; /* Disable transition for desktop */
+    }
+
+    /* Navbar Styling for Desktop */
+    .menu_toggle {
+        display: none; /* Hide the menu toggle for larger screens */
+    }
+
+   
+}
+
+/* navbar when tablet or desktop */
+.navbar {
+    background-color: var(--inside-cards-bg-color);
+    height: 100px;
+    padding: 10px 15px;
+    display: flex;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 90%;
+    border-radius: 15px;
+    z-index: 9999;
+}
+.menu_toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+.logo_div {
+    display: flex;
+    align-items: center;
+}
+#logo_image {
+    width: 50px;
+}
+.bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #f2f2f2;
+    margin: 6px 0;
+    transition: all .3s ease;
+    position: absolute;
+}
+.bar1 {
+    top: 0;
+}
+.bar2 {
+    top: 30%;
+    transform: translateY(-50%);
+}
+.bar3 {
+    bottom: 0;
+}
+/* animation horizontal lines turning into an X */
+.menu_toggle.open .bar1 {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -1px;
+}
+.menu_toggle.open .bar2 {
+    opacity: 0;
+}
+.menu_toggle.open .bar3 {
+    transform: rotate(-45deg);
+    bottom: 50%;
+    margin-bottom: -1px;
+}
