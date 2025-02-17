@@ -1,0 +1,202 @@
+:root {
+    --main-btn-bg-color: #F7D100;
+    --main-btn-txt-color: #1e1e1e;
+    --main-text-color: #ffffff;
+    --site-bg-color: #242430;
+    --inside-cards-bg-color: #1B1B26;
+    --accent-text-color: #f7d100;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+  }
+  
+  body {
+    background-color: var(--site-bg-color);
+    color: var(--main-text-color);
+    line-height: 1.5;
+  }
+  
+  /* Main Container */
+  .body-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+  }
+  
+  /* =========================
+     Industry Selection Section
+     ========================= */
+  #industry-selection {
+    margin-bottom: 50px;
+  }
+  
+  .industry-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .industry-card {
+    background-color: var(--inside-cards-bg-color);
+    border-radius: 15px;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .industry-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .industry-card h3 {
+    font-size: 1.8rem;
+    color: var(--accent-text-color);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  
+  /* Industry Button */
+  .industry-select-btn {
+    background-color: var(--main-btn-bg-color);
+    color: var(--main-btn-txt-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .industry-select-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* =========================
+     Products Section
+     ========================= */
+  #products-section {
+    margin-top: 50px;
+  }
+  
+  /* Breadcrumb Navigation */
+  .breadcrumb {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  .breadcrumb a {
+    color: var(--accent-text-color);
+    text-decoration: none;
+    margin-right: 5px;
+  }
+  
+  .breadcrumb span {
+    margin-right: 5px;
+  }
+  
+  /* Products Container */
+  #products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* =========================
+     Product Card Styling
+     ========================= */
+  .product-card {
+    background-color: var(--inside-cards-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-card h4 {
+    font-size: 1.5rem;
+    color: var(--accent-text-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .product-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .product-card p strong {
+    color: var(--accent-text-color);
+  }
+  
+  /* Vezi Produs Button */
+  .btn-vezi-produs {
+    display: inline-block;
+    background-color: var(--main-btn-bg-color);
+    color: var(--main-btn-txt-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-vezi-produs:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* =========================
+     Responsive Adjustments
+     ========================= */
+  @media (max-width: 768px) {
+    .industry-card {
+      width: 90%;
+      height: auto;
+      padding: 30px 20px;
+    }
+    
+    .industry-card h3 {
+      font-size: 1.5rem;
+    }
+    
+    .industry-select-btn {
+      font-size: 0.9rem;
+    }
+    
+    .product-card {
+      padding: 15px;
+    }
+    
+    .product-card h4 {
+      font-size: 1.3rem;
+    }
+    
+    .product-card p {
+      font-size: 0.9rem;
+    }
+  }
+  

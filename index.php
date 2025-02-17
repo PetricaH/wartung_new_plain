@@ -87,19 +87,19 @@ include 'includes/navbar.php';
         <div class="certificates-carousel">
             <!-- All images use plain PHP for asset paths -->
             <img 
-              src="images/certificates-imgs/certificate-one.webp" 
+              src="images/certificates-imgs/certificate-one.webp" loading="lazy"
               alt="Certificat Acreditare NSF"
             >
             <img 
-              src="images/certificates-imgs/certificate-two.webp" 
+              src="images/certificates-imgs/certificate-two.webp" loading="lazy"
               alt="Certificat Acreditare ISO 9001"
             >
             <img 
-              src="images/certificates-imgs/certificate-three.webp" 
+              src="images/certificates-imgs/certificate-three.webp" loading="lazy"
               alt="Certificat Acreditare CE"
             >
             <img 
-              src="images/certificates-imgs/certificate-four.webp" 
+              src="images/certificates-imgs/certificate-four.webp" loading="lazy"
               alt="Certificat Acreditare ISO 14001"
             >
         </div>
@@ -135,25 +135,25 @@ include 'includes/navbar.php';
                 <div class="carousel-track">
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-one.webp" 
+                      src="images/certificates-imgs/certificate-one.webp" loading="lazy"
                       alt="Certificate One"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-two.webp" 
+                      src="images/certificates-imgs/certificate-two.webp" loading="lazy"
                       alt="Certificate Two"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-three.webp" 
+                      src="images/certificates-imgs/certificate-three.webp" loading="lazy"
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-four.webp" 
+                      src="images/certificates-imgs/certificate-four.webp" loading="lazy"
                       alt="Certificate Four"
                     >
                   </div>
@@ -164,7 +164,6 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-caret-right"></i>
               </button>
               
-              <div class="carousel-dots"></div>
             </div>
         </div>
 
@@ -175,73 +174,73 @@ include 'includes/navbar.php';
                   <!-- 1st track of logos -->
                   <img 
                     src="images/companies-logos/company-1.webp" 
-                    class="company-logo" alt="Client" width="150" height="100"
+                    class="company-logo" alt="Client" width="150" height="100" loading="lazy"
                   >
                   <img 
-                    src="images/companies-logos/company-2.webp" width="150" height="100"
+                    src="images/companies-logos/company-2.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-3.webp" width="150" height="100"
+                    src="images/companies-logos/company-3.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-4.webp" width="150" height="100"
+                    src="images/companies-logos/company-4.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client" 
                   >
                   <img 
-                    src="images/companies-logos/company-5.webp" width="150" height="100"
+                    src="images/companies-logos/company-5.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-6.webp" width="150" height="100"
+                    src="images/companies-logos/company-6.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-7.webp" width="150" height="100"
+                    src="images/companies-logos/company-7.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-8.webp" width="150" height="100"
+                    src="images/companies-logos/company-8.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
               </div>
               <div class="logo-track">
                   <!-- 2nd track of logos -->
                   <img 
-                    src="images/companies-logos/company-9.webp" width="150" height="100"
+                    src="images/companies-logos/company-9.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-10.webp" width="150" height="100"
+                    src="images/companies-logos/company-10.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-11.webp" width="150" height="100"
+                    src="images/companies-logos/company-11.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-12.webp" width="150" height="100"
+                    src="images/companies-logos/company-12.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-13.webp" width="150" height="100"
+                    src="images/companies-logos/company-13.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-14.webp" width="150" height="100"
+                    src="images/companies-logos/company-14.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-15.webp" width="150" height="100"
+                    src="images/companies-logos/company-15.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-16.webp" width="150" height="100"
+                    src="images/companies-logos/company-16.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-17.webp" width="150" height="100"
+                    src="images/companies-logos/company-17.webp" width="150" height="100" loading="lazy"
                     class="company-logo" alt="Client"
                   >
               </div>

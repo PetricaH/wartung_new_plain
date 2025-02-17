@@ -1,4 +1,26 @@
 <!-- Navbar -->
+<style>
+    .navbar {
+    background-color: var(--inside-cards-bg-color);
+    height: 65px;
+    padding: 10px 15px;
+    display: flex;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 90%;
+    border-radius: 15px;
+    z-index: 999;
+}
+#logo_image {
+    width: 30px;
+    position: relative;
+    z-index: 999;
+}
+</style>
 <div class="navbar">
     <div class="logo_div">
         <a href="index.php"><img src="/images/wartung-yellow-logo.svg" id="logo_image" alt="Logo"></a>

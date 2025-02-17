@@ -104,15 +104,15 @@
   <!-- Certificates Section -->
   <div class="certificates">
     <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
-      <img style="width:250px;margin:5px;" src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sal.png" alt="Solutionarea Alternativa a Litigiilor">
+      <img style="width:250px;margin:5px;" src="images/anpc-sal.webp" loading="lazy" alt="Solutionarea Alternativa a Litigiilor">
     </a><br/>
     <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
-      <img style="width:250px;margin:5px;" src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sol.png" alt="Solutionarea Online a Litigiilor">
+      <img style="width:250px;margin:5px;" src="images/anpc-sol.webp" loading="lazy" alt="Solutionarea Online a Litigiilor">
     </a>
   </div>
 </div>
 
-  <script src="scripts/home.js"></script>
-  <script src="scripts/navbar.js"></script>
+  <script src="dist/all.min.js"></script>
+  <!-- <script src="scripts/navbar.js"></script> -->
 </html>
 </body>
