@@ -4,7 +4,7 @@
         <a href="index.php"><img src="/images/wartung-yellow-logo.svg" id="logo_image" alt="Logo"></a>
     </div>
 
-    <button class="menu_toggle" id="menu_toggle">
+    <button class="menu_toggle" id="menu_toggle" aria-label="Deschidere Meniu">
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
         <div class="bar bar3"></div>

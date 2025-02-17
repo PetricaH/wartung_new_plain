@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = Array.from(document.querySelectorAll('.carousel-item'));
     const prevButton = document.querySelector('.carousel-control.prev');
     const nextButton = document.querySelector('.carousel-control.next');
-    const dotsContainer = document.querySelector('.carousel-dots');
     const trackContainer = document.querySelector('.carousel-track-container');
   
     let currentPage = 0;
@@ -27,25 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const containerWidth = trackContainer.getBoundingClientRect().width;
       const shift = currentPage * containerWidth;
       track.style.transform = `translateX(-${shift}px)`;
-      updateDots();
-    }
-    function createDots() {
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('button');
-        if (i === currentPage) dot.classList.add('active');
-        dot.addEventListener('click', function() {
-          currentPage = i;
-          updateCarousel();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
-    function updateDots() {
-      const dots = dotsContainer.querySelectorAll('button');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentPage);
-      });
     }
     prevButton.addEventListener('click', function() {
       if (currentPage > 0) {
@@ -61,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     window.addEventListener('resize', function() {
       updateCarousel();
-      createDots();
     });
-    createDots();
     updateCarousel();
   
     /* --------------- Animate Numbers Code --------------- */

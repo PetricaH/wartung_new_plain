@@ -41,7 +41,7 @@ include 'includes/navbar.php';
                 <span>WA 303</span>
                 <!-- Updated to use plain PHP for asset paths -->
                 <img 
-                  src="/images/303.png" 
+                  src="/images/303.webp" 
                   alt="Imagine Produs Preferat - MANS 303"
                 >
             </div>
@@ -87,19 +87,19 @@ include 'includes/navbar.php';
         <div class="certificates-carousel">
             <!-- All images use plain PHP for asset paths -->
             <img 
-              src="images/certificates-imgs/certificate-one.png" 
+              src="images/certificates-imgs/certificate-one.webp" 
               alt="Certificat Acreditare NSF"
             >
             <img 
-              src="images/certificates-imgs/certificate-two.png" 
+              src="images/certificates-imgs/certificate-two.webp" 
               alt="Certificat Acreditare ISO 9001"
             >
             <img 
-              src="images/certificates-imgs/certificate-three.png" 
+              src="images/certificates-imgs/certificate-three.webp" 
               alt="Certificat Acreditare CE"
             >
             <img 
-              src="images/certificates-imgs/certificate-four.png" 
+              src="images/certificates-imgs/certificate-four.webp" 
               alt="Certificat Acreditare ISO 14001"
             >
         </div>
@@ -112,7 +112,7 @@ include 'includes/navbar.php';
             <div class="video-container ximena">
                 <button 
                   onclick="window.location.href='https://youtu.be/I0aUt9monsY';" 
-                  class="do-something-btn"
+                  class="do-something-btn" aria-label="Vezi Videoclip XIMENA FOOD"
                 >
                   <i class="fa-solid fa-play"></i>
                 </button>
@@ -127,7 +127,7 @@ include 'includes/navbar.php';
         <div class="companies-we-worked-with-container">
             <p>Am livrat rezultate la</p>
             <div class="companies-carousel">
-              <button class="carousel-control prev do-something-btn">
+              <button class="carousel-control prev do-something-btn" aria-label="Vezi Certificate Stânga">
                 <i class="fa-solid fa-caret-left"></i>
               </button>
               
@@ -135,32 +135,32 @@ include 'includes/navbar.php';
                 <div class="carousel-track">
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-one.png" 
+                      src="images/certificates-imgs/certificate-one.webp" 
                       alt="Certificate One"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-two.png" 
+                      src="images/certificates-imgs/certificate-two.webp" 
                       alt="Certificate Two"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-three.png" 
+                      src="images/certificates-imgs/certificate-three.webp" 
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-four.png" 
+                      src="images/certificates-imgs/certificate-four.webp" 
                       alt="Certificate Four"
                     >
                   </div>
                 </div>
               </div>
               
-              <button class="carousel-control next do-something-btn">
+              <button class="carousel-control next do-something-btn" aria-label="Vezi Certificate Dreapta">
                 <i class="fa-solid fa-caret-right"></i>
               </button>
               
@@ -174,74 +174,74 @@ include 'includes/navbar.php';
               <div class="logo-track">
                   <!-- 1st track of logos -->
                   <img 
-                    src="images/companies-logos/company-1.png" 
+                    src="images/companies-logos/company-1.webp" 
+                    class="company-logo" alt="Client" width="150" height="100"
+                  >
+                  <img 
+                    src="images/companies-logos/company-2.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-2.svg" 
+                    src="images/companies-logos/company-3.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-3.svg" 
+                    src="images/companies-logos/company-4.webp" width="150" height="100"
+                    class="company-logo" alt="Client" 
+                  >
+                  <img 
+                    src="images/companies-logos/company-5.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-4.svg" 
+                    src="images/companies-logos/company-6.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-5.svg" 
+                    src="images/companies-logos/company-7.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-6.svg" 
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-7.svg" 
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-8.png" 
+                    src="images/companies-logos/company-8.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
               </div>
               <div class="logo-track">
                   <!-- 2nd track of logos -->
                   <img 
-                    src="images/companies-logos/company-9.svg" 
+                    src="images/companies-logos/company-9.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-10.webp" 
+                    src="images/companies-logos/company-10.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-11.svg" 
+                    src="images/companies-logos/company-11.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-12.png" 
+                    src="images/companies-logos/company-12.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-13.svg" 
+                    src="images/companies-logos/company-13.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-14.webp" 
+                    src="images/companies-logos/company-14.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-15.png" 
+                    src="images/companies-logos/company-15.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-16.webp" 
+                    src="images/companies-logos/company-16.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
                   <img 
-                    src="images/companies-logos/company-17.png" 
+                    src="images/companies-logos/company-17.webp" width="150" height="100"
                     class="company-logo" alt="Client"
                   >
               </div>
@@ -254,7 +254,7 @@ include 'includes/navbar.php';
             <div class="video-container imocon">
                 <button 
                   onclick="window.location.href='https://youtu.be/uCB06_QxqWA?si=HhGhDDuDzw1UDAw8';"
-                  class="do-something-btn"
+                  class="do-something-btn" aria-label="Vezi Videoclip IMOCON"
                 >
                   <i class="fa-solid fa-play"></i>
                 </button>  
@@ -295,10 +295,10 @@ include 'includes/navbar.php';
                     </div>
                     <span class="what-about-results-card-title">CURĂȚENIE</span>
                     <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-left">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Curățenie Alimentară">
                             ALIMENTARĂ
                         </button>
-                        <button class="what-about-results-hover-button what-about-results-hover-button-right">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Curățenie Generală">
                             GENERALĂ
                         </button>
                     </div>
@@ -312,10 +312,10 @@ include 'includes/navbar.php';
                     </div>
                     <span class="what-about-results-card-title">LUBRIFIERE</span>
                     <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-left">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Lubrifiere Alimentară">
                             ALIMENTARĂ
                         </button>
-                        <button class="what-about-results-hover-button what-about-results-hover-button-right">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Lubrifiere Generală">
                             GENERALĂ
                         </button>
                     </div>
@@ -326,7 +326,7 @@ include 'includes/navbar.php';
                     <div class="what-about-results-single-constructii-image"></div>
                     <span class="what-about-results-card-title">CONSTRUCȚII</span>
                     <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Construcții">
                             DETALII
                         </button>
                     </div>
@@ -337,7 +337,7 @@ include 'includes/navbar.php';
                     <div class="what-about-results-single-metalurgie-image"></div>
                     <span class="what-about-results-card-title">METALURGIE</span>
                     <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom">
+                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Metalurgie">
                             DETALII
                         </button>
                     </div>
@@ -349,9 +349,9 @@ include 'includes/navbar.php';
             <h2>Dar Cum Îți Putem Garanta Rezultate?</h2>
             <h3>PRIN 3 PAȘI SIMPLI</h3>
             <div class="steps-buttons-container">
-              <button class="step-button active" data-step="1">Pasul 1</button>
-              <button class="step-button" data-step="2">Pasul 2</button>
-              <button class="step-button" data-step="3">Pasul 3</button>
+              <button class="step-button active" data-step="1" aria-label="Pasul 1 în garantarea rezultatelor">Pasul 1</button>
+              <button class="step-button" data-step="2" aria-label="Pasul 2 în garantarea rezultatelor">Pasul 2</button>
+              <button class="step-button" data-step="3" aria-label="Pasul 3 în garantarea rezultatelor">Pasul 3</button>
             </div>
             
             <!-- Connector element for the blob effect -->
@@ -383,7 +383,7 @@ include 'includes/navbar.php';
                 <i class="fas fa-utensils"></i>
                 <span>Industria Alimentară</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="alimentara">
+                <button class="contact-industry-btn" data-industry="alimentara" aria-label="Vorbește cu un consultant pentru Industria Alimentară">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -392,7 +392,7 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-bed"></i>
                 <span>Industria HORECA</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="horeca">
+                <button class="contact-industry-btn" data-industry="horeca" aria-label="Vorbește cu un consultant pentru Industria HORECA">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -401,7 +401,7 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-person-digging"></i>
                 <span>Industria Construcții</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="construcții">
+                <button class="contact-industry-btn" data-industry="construcții" aria-label="Vorbește cu un consultant pentru Industria Construcții">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -410,7 +410,7 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 <span>Industria Metalurgică</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="metalurgica">
+                <button class="contact-industry-btn" data-industry="metalurgica" aria-label="Vorbește cu un consultant pentru Industria Metalurgie">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -419,7 +419,7 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-car-side"></i>
                 <span>Industria Automotive</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="automotive">
+                <button class="contact-industry-btn" data-industry="automotive" aria-label="Vorbește cu un consultant pentru Industria Automotive">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -428,7 +428,7 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-building-columns"></i>
                 <span>Instituții Publice</span>
                 <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="institutii-publice">
+                <button class="contact-industry-btn" data-industry="institutii-publice" aria-label="Vorbește cu un consultant pentru Instituții Publice">
                     Vorbeste cu un consultant specializat
                 </button>
             </div>
@@ -454,7 +454,7 @@ include 'includes/navbar.php';
                     <label>Message:</label>
                     <textarea required></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" aria-label="Trimite Formular Abonare la Newsletter">Send</button>
             </form>
         </div>
     </div>

@@ -1,141 +1,154 @@
 /* General Footer Styling */
 .footer {
-    margin-top: 200px;
-    color: var(--main-text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-  }
-  
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 1300px;
-    width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .footer-container {
-        padding: 50px;
-    }
-  }
-  
-  /* Reset list styles */
-  .footer-container ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .box-title {
-    color: var(--accent-text-color);
-    text-transform: uppercase;
-    font-weight: bold;
+  margin-top: 200px;
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
-  .footer-container ol li {
-    margin-bottom: 0.5rem;
-    text-align: left;
-  }
 
-  .footer-container ol li a {
-    text-decoration: none;
-    color: var(--main-text-color);
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1300px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 50px;
   }
-  
-  /* Responsive Layout for Larger Screens */
-  @media (min-width: 768px) {
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto auto;
-      gap: 1rem;
-      padding: 2rem;
-      justify-items: center; /* centers grid items horizontally */
-      text-align: center;    /* centers text within each grid item */
-    }
-    /* First three boxes in row 1 (columns 1-3) */
-    .link-uri-utile-box {
-      grid-column: 1 / 2;
-      grid-row: 1;
-    }
-    .socials-box {
-      grid-column: 2 / 3;
-      grid-row: 1;
-    }
-    .legal-contact-box {
-      grid-column: 3 / 4;
-      grid-row: 1;
-    }
-    /* Subscribe & Credits in subsequent rows */
-    .subscribe-to-newsletter-box {
-      grid-column: 1 / 4; /* full width row; adjust as desired */
-      grid-row: 2;
-    }
-    .credits-box {
-      grid-column: 1 / 4; /* full width row; adjust as desired */
-      grid-row: 3;
-    }
+}
+
+/* Reset list styles */
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Box Titles */
+.box-title {
+  color: var(--accent-text-color);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Base list item styling */
+.footer-container ul > li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.footer-container ul > li a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+/* Responsive Layout for Larger Screens */
+@media (min-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+    padding: 2rem;
+    justify-items: center; /* centers grid items horizontally */
+    text-align: center;    /* centers text within each grid item */
   }
-  
-  /* Subscribe-to-Newsletter Box Styling */
+  /* First three boxes in row 1 (columns 1-3) */
+  .link-uri-utile-box {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .socials-box {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .legal-contact-box {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+  /* Subscribe & Credits in subsequent rows */
   .subscribe-to-newsletter-box {
-    background: var(--inside-cards-bg-color);
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center; /* centers content */
+    grid-column: 1 / 4; /* full width row */
+    grid-row: 2;
   }
-  .subscribe-to-newsletter-box h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-  }
-  .subscribe-to-newsletter-box p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Subscribe Form Styling */
-  .subscribe-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    height: 80px;
-  }
-  .subscribe-form input[type="email"] {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 3px;
-    font-size: 1rem;
-    width: 100%; /* makes input take full width */
-    max-width: 300px; /* optional max width */
-  }
-  .subscribe-form button {
-    padding: 0.5rem;
-    border: none;
-    background: var(--accent-text-color);
-    color: var(--main-btn-txt-color);
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-    width: 100%;
-    max-width: 300px;
-  }
-  .subscribe-form button:hover {
-    background: var(--site-bg-color);
-    color: var(--accent-text-color);
-    border: 1px solid var(--accent-text-color);
-  }
-  
-  /* Credits Box Styling */
   .credits-box {
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    grid-column: 1 / 4; /* full width row */
+    grid-row: 3;
   }
-  
+}
+
+/* Subscribe-to-Newsletter Box Styling */
+.subscribe-to-newsletter-box {
+  background: var(--inside-cards-bg-color);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.subscribe-to-newsletter-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.subscribe-to-newsletter-box p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Subscribe Form Styling */
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  height: 80px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  width: 100%; /* makes input take full width */
+  max-width: 300px; /* optional max width */
+}
+
+.subscribe-form button {
+  padding: 0.5rem;
+  border: none;
+  background: var(--accent-text-color);
+  color: var(--main-btn-txt-color);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.subscribe-form button:hover {
+  background: var(--site-bg-color);
+  color: var(--accent-text-color);
+  border: 1px solid var(--accent-text-color);
+}
+
+/* Credits Box Styling */
+.credits-box {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Certificates Section Styling */
+.certificates a img {
+  width: 250px;
+  margin: 5px;
+}

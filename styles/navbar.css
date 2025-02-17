@@ -23,6 +23,7 @@
         max-height: 100vh; /* Expand to full height */
         opacity: 1; /* Fully visible */
         border-radius: 15px;
+        border-radius: 20px;
     }
 
     /* Menu items animation */
@@ -115,7 +116,7 @@
 /* navbar when tablet or desktop */
 .navbar {
     background-color: var(--inside-cards-bg-color);
-    height: 100px;
+    height: 65px;
     padding: 10px 15px;
     display: flex;
     left: 50%;
@@ -142,7 +143,7 @@
     align-items: center;
 }
 #logo_image {
-    width: 50px;
+    width: 30px;
 }
 .bar {
     display: block;

@@ -15,16 +15,11 @@
 }
 
 body { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   scroll-behavior: smooth;
-}
-
-:root {
-  --main-btn-bg-color: #F7D100;
-  --main-btn-txt-color: #1e1e1e;
-  --main-text-color: #c4c4c4;
-  --site-bg-color: #242430;
-  --inside-cards-bg-color: #1B1B26;
-  --accent-text-color: #f7d100;
 }
 
 button.do-something-btn {
@@ -98,6 +93,11 @@ section {
     .body-inside {
         width: 90%; /* Adjust width for desktops */
     }
+
+    .certificates-carousel img {
+      height: 100px !important;
+  }
+  
 }
 
 @media (max-width: 768px) {
@@ -121,12 +121,12 @@ section {
         left: 0;
         width: 100%;
         height: 1500px;
-        background: url('/images/hero-bg-top-layer.png') no-repeat center bottom;
+        background: url('/images/hero-bg-top-layer.webp') no-repeat center bottom;
         z-index: 1;
     }
 
     .hero-text-part {
-        transform: translate(-50%, -85%);
+        transform: translate(-50%, -100%) !important; 
         z-index: 2; 
         padding: 20px;
         color: #fff;
@@ -139,67 +139,21 @@ section {
     }
 }
 
+@media (max-width: 345px) {
+  .body-inside {
+      width: 90%; /* Adjust width for desktops */
+  }
+
+  .certificates-carousel img {
+    height: 50px !important;
+}
+
+}
+
 h1 {
     font-size: clamp(2.5rem, 8vw, 4rem) !important;
     text-transform: uppercase;
     color: var(--main-text-color);
-}
-
-#hero-section {
-    background: url('/images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    margin-top: 0 !important;
-}
-
-/* Overlay color layer */
-#hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(36, 36, 48, 0.8);
-    z-index: 1;
-}
-
-#hero-section::after {
-    content: "";
-    position: absolute;
-    bottom: -20%;
-    left: 0;
-    width: 100%;
-    height: 1000px;
-    background: url('/images/hero-bg-top-layer.png') no-repeat center bottom;
-    z-index: 1;
-}
-
-.hero-text-part {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -85%);
-    z-index: 2; 
-    padding: 20px;
-    color: #fff;
-    width: 70%;
-    height: 30vh;
-}
-
-.hero-text-part button {
-    margin-top: 50px;
-}
-
-.hero-text-part i {
-    padding-left: 15px;
-}
-
-.hero-text-part span {
-    color: var(--accent-text-color);
 }
 
 body {
@@ -365,7 +319,7 @@ span {
     background-color: red;
     position: relative;
     overflow: hidden;
-    background: url('/images/case-study-bg.png');
+    background: url('/images/case-study-bg.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 10px 20px rgba(247, 209, 0, 0.2);
@@ -412,7 +366,7 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('/images/certificates-imgs/certificates-bg.png');
+    background: url('/images/certificates-imgs/certificates-bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -459,7 +413,7 @@ span {
 }
 
 .certificates-carousel img {
-    height: 70px;
+    height: 50px;
 }
 
 /* VIDEO TESTIMONIAL XIMENA DOWNWARDS */
@@ -511,11 +465,11 @@ span {
 
 /* Define the background images */
 .video-container.ximena {
-  background-image: url('/images/testi-ximena.png');
+  background-image: url('/images/testi-ximena.webp');
 }
 
 .video-container.imocon {
-  background-image: url('/images/testi-imocon.png');
+  background-image: url('/images/testi-imocon.webp');
 }
 
 /* On hover, zoom out the image to 100% (actual container size) */
@@ -573,6 +527,12 @@ span {
     padding: 2rem;
     margin-top: 100px;
     margin-bottom: 100px;
+  }
+
+  .companies-we-worked-with-container p {
+    color: var(--main-text-color);
+    font-size: 2rem;
+    padding-bottom: 30px;
   }
   
   /* Carousel outer container */
@@ -633,29 +593,6 @@ span {
     right: 10px;
   }
   
-  /* Navigation dots container */
-  .carousel-dots {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* Style for each dot */
-  .carousel-dots button {
-    background: #ddd;
-    border: none;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* Active dot styling */
-  .carousel-dots button.active {
-    background: var(--accent-text-color);
-  }
-
 #what-about-prices-section {
     display: flex;
     flex-direction: column;
@@ -859,19 +796,19 @@ span {
 }
   
   .what-about-results-curatenie-image-left {
-    background-image: url('/images/product-cards-imgs/left-curatenie.jpg');
+    background-image: url('/images/product-cards-imgs/left-curatenie.webp');
   }
   
   .what-about-results-curatenie-image-right {
-    background-image: url('/images/product-cards-imgs/right-curatenie.jpg');
+    background-image: url('/images/product-cards-imgs/right-curatenie.webp');
   }
 
   .what-about-results-lubrifiere-image-left {
-    background-image: url('/images/product-cards-imgs/left-lubrifiere.jpg');
+    background-image: url('/images/product-cards-imgs/left-lubrifiere.webp');
   }
   
   .what-about-results-lubrifiere-image-right {
-    background-image: url('/images/product-cards-imgs/right-lubrifiere.jpg');
+    background-image: url('/images/product-cards-imgs/right-lubrifiere.webp');
   }
   
   
@@ -885,11 +822,11 @@ span {
   }
   
   .what-about-results-card-serv .what-about-results-single-constructii-image {
-    background-image: url('/images/product-cards-imgs/constructii.jpg');
+    background-image: url('/images/product-cards-imgs/constructii.webp');
   }
 
   .what-about-results-card-serv .what-about-results-single-metalurgie-image {
-    background-image: url('/images/product-cards-imgs/metalurgie.jpg');
+    background-image: url('/images/product-cards-imgs/metalurgie.webp');
   }
   
   /* Card Title */
@@ -1189,12 +1126,15 @@ span {
 }
 
 .company-logo {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(1) brightness(1.2);
   opacity: 0.8;
   transition: all 0.3s ease;
-  max-width: 150px;
-  padding: 5rem 2rem;
+  padding: 1rem; /* Adjust padding as needed */
 }
+
 
 .company-logo:hover {
   filter: none;
