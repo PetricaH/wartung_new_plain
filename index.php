@@ -135,30 +135,68 @@ include 'includes/navbar.php';
                 <div class="carousel-track">
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-one.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/complex-muzeal-bistrita-nasaud.webp" loading="lazy"
                       alt="Certificate One"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-two.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/elcen.webp" loading="lazy"
                       alt="Certificate Two"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-three.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/mapn.webp" loading="lazy"
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/certificates-imgs/certificate-four.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/municipiul-lupeni.webp" loading="lazy"
+                      alt="Certificate Four"
+                    >
+                  </div>
+                  <div class="carousel-track">
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/nustiu.webp" loading="lazy"
+                      alt="Certificate One"
+                    >
+                  </div>
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/primaria-bolintin.webp" loading="lazy"
+                      alt="Certificate Two"
+                    >
+                  </div>
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/primaria-comarnic.webp" loading="lazy"
+                      alt="Certificate Three"
+                    >
+                  </div>
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/primaria-negresti-oas.webp" loading="lazy"
+                      alt="Certificate Four"
+                    >
+                  </div>
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/ratbv.webp" loading="lazy"
+                      alt="Certificate Three"
+                    >
+                  </div>
+                  <div class="carousel-item">
+                    <img 
+                      src="images/companii_cu_care_am_lucrat/salubritate-craiova.webp" loading="lazy"
                       alt="Certificate Four"
                     >
                   </div>
                 </div>
               </div>
+            </div>
               
               <button class="carousel-control next do-something-btn" aria-label="Vezi Certificate Dreapta">
                 <i class="fa-solid fa-caret-right"></i>
@@ -167,184 +205,105 @@ include 'includes/navbar.php';
             </div>
         </div>
 
-        <!-- Companies Showcase (infinite logos) -->
-        <section class="companies-showcase">
-          <div class="logo-carousel">
-              <div class="logo-track">
-                  <!-- 1st track of logos -->
-                  <img 
-                    src="images/companies-logos/company-1.webp" 
-                    class="company-logo" alt="Client" width="150" height="100" loading="lazy"
-                  >
-                  <img 
-                    src="images/companies-logos/company-2.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-3.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-4.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client" 
-                  >
-                  <img 
-                    src="images/companies-logos/company-5.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-6.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-7.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-8.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-              </div>
-              <div class="logo-track">
-                  <!-- 2nd track of logos -->
-                  <img 
-                    src="images/companies-logos/company-9.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-10.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-11.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-12.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-13.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-14.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-15.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-16.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-                  <img 
-                    src="images/companies-logos/company-17.webp" width="150" height="100" loading="lazy"
-                    class="company-logo" alt="Client"
-                  >
-              </div>
-          </div>
-        </section>
-
+        
         <!-- Video Testimonial IMOCON -->
         <div class="video-testimonial">
-            <span class="business-name">IMOCON</span>
-            <div class="video-container imocon">
-                <button 
-                  onclick="window.location.href='https://youtu.be/uCB06_QxqWA?si=HhGhDDuDzw1UDAw8';"
-                  class="do-something-btn" aria-label="Vezi Videoclip IMOCON"
-                >
-                  <i class="fa-solid fa-play"></i>
-                </button>  
-            </div>
-            <p>
-                “Lorem Ipsum is simply dummy text of the printing and typesetting industry...
-            </p>
-            <span class="testi-bar"></span>
-            <span class="testi-name">Lazlo</span>
+          <span class="business-name">IMOCON</span>
+          <div class="video-container imocon">
+            <button 
+            onclick="window.location.href='https://youtu.be/uCB06_QxqWA?si=HhGhDDuDzw1UDAw8';"
+            class="do-something-btn" aria-label="Vezi Videoclip IMOCON"
+            >
+            <i class="fa-solid fa-play"></i>
+          </button>  
         </div>
-
-        <section id="what-about-prices-section">
-            <div class="what-about-prices-container">
-                <div class="text-part">
-                    <span>Nu îți vom insulta inteligența</span> spunându-ți că avem <span>“cea mai bună calitate 
-                    la cel mai bun preț”</span> și <span>“cea mai variată gamă de produse”</span>, și <span>nu</span> îți vom oferi <span>o reducere 
-                     de 15%</span> la prima ta comandă (pentru ceva ce probabil nu te interesează).
+        <p>
+          “Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+        </p>
+        <span class="testi-bar"></span>
+        <span class="testi-name">Lazlo</span>
+      </div>
+      
+      <section id="what-about-prices-section">
+        <div class="what-about-prices-container">
+          <div class="text-part">
+            <span>Nu îți vom insulta inteligența</span> spunându-ți că avem <span>“cea mai bună calitate 
+              la cel mai bun preț”</span> și <span>“cea mai variată gamă de produse”</span>, și <span>nu</span> îți vom oferi <span>o reducere 
+                de 15%</span> la prima ta comandă (pentru ceva ce probabil nu te interesează).
+              </div>
+              <div class="graphic-part">
+                <span>DAR ÎȚI OFERIM</span>
+                <span>Mostră Gratuită</span>
+                <i class="fa-solid fa-vial"></i>
+                <div class="disclaimers">
+                  <p>*daca îndeplinești criteriile noastre;</p>
+                  <p>*garanția de rambursare completă fără întrebări dacă nu ești mulțumit 100%;</p>
                 </div>
-                <div class="graphic-part">
-                    <span>DAR ÎȚI OFERIM</span>
-                    <span>Mostră Gratuită</span>
-                    <i class="fa-solid fa-vial"></i>
-                    <div class="disclaimers">
-                        <p>*daca îndeplinești criteriile noastre;</p>
-                        <p>*garanția de rambursare completă fără întrebări dacă nu ești mulțumit 100%;</p>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-
-        <section id="what-about-results-section">
+          </section>
+          
+          <section id="what-about-results-section">
             <div class="what-about-results-cards-container">
-                <!-- Card 1: CURATENIE -->
-                <div class="what-about-results-card what-about-results-card-curat">
-                    <div class="what-about-results-dual-images">
-                        <div class="what-about-results-curatenie-image-left"></div>
-                        <div class="what-about-results-curatenie-image-right"></div>
-                    </div>
-                    <span class="what-about-results-card-title">CURĂȚENIE</span>
-                    <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Curățenie Alimentară">
-                            ALIMENTARĂ
-                        </button>
-                        <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Curățenie Generală">
-                            GENERALĂ
-                        </button>
-                    </div>
+              <!-- Card 1: CURATENIE -->
+              <div class="what-about-results-card what-about-results-card-curat">
+                <div class="what-about-results-dual-images">
+                  <div class="what-about-results-curatenie-image-left"></div>
+                  <div class="what-about-results-curatenie-image-right"></div>
                 </div>
-
-                <!-- Card 2: LUBRIFIERE -->
-                <div class="what-about-results-card what-about-results-card-curat">
-                    <div class="what-about-results-dual-images">
-                        <div class="what-about-results-lubrifiere-image-left"></div>
-                        <div class="what-about-results-lubrifiere-image-right"></div>
-                    </div>
-                    <span class="what-about-results-card-title">LUBRIFIERE</span>
-                    <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Lubrifiere Alimentară">
-                            ALIMENTARĂ
-                        </button>
-                        <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Lubrifiere Generală">
-                            GENERALĂ
-                        </button>
-                    </div>
+                <span class="what-about-results-card-title">CURĂȚENIE</span>
+                <div class="what-about-results-hover-buttons">
+                  <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Curățenie Alimentară">
+                    ALIMENTARĂ
+                  </button>
+                  <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Curățenie Generală">
+                    GENERALĂ
+                  </button>
                 </div>
-
-                <!-- Card 3: CONSTRUCȚII -->
-                <div class="what-about-results-card what-about-results-card-serv">
-                    <div class="what-about-results-single-constructii-image"></div>
-                    <span class="what-about-results-card-title">CONSTRUCȚII</span>
-                    <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Construcții">
-                            DETALII
-                        </button>
-                    </div>
+              </div>
+              
+              <!-- Card 2: LUBRIFIERE -->
+              <div class="what-about-results-card what-about-results-card-curat">
+                <div class="what-about-results-dual-images">
+                  <div class="what-about-results-lubrifiere-image-left"></div>
+                  <div class="what-about-results-lubrifiere-image-right"></div>
                 </div>
-
-                <!-- Card 4: METALURGIE -->
-                <div class="what-about-results-card what-about-results-card-serv">
-                    <div class="what-about-results-single-metalurgie-image"></div>
-                    <span class="what-about-results-card-title">METALURGIE</span>
-                    <div class="what-about-results-hover-buttons">
-                        <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Metalurgie">
-                            DETALII
-                        </button>
-                    </div>
+                <span class="what-about-results-card-title">LUBRIFIERE</span>
+                <div class="what-about-results-hover-buttons">
+                  <button class="what-about-results-hover-button what-about-results-hover-button-left" aria-label="Detalii Despre Industria Lubrifiere Alimentară">
+                    ALIMENTARĂ
+                  </button>
+                  <button class="what-about-results-hover-button what-about-results-hover-button-right" aria-label="Detalii Despre Industria Lubrifiere Generală">
+                    GENERALĂ
+                  </button>
                 </div>
+              </div>
+              
+              <!-- Card 3: CONSTRUCȚII -->
+              <div class="what-about-results-card what-about-results-card-serv">
+                <div class="what-about-results-single-constructii-image"></div>
+                <span class="what-about-results-card-title">CONSTRUCȚII</span>
+                <div class="what-about-results-hover-buttons">
+                  <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Construcții">
+                    DETALII
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Card 4: METALURGIE -->
+              <div class="what-about-results-card what-about-results-card-serv">
+                <div class="what-about-results-single-metalurgie-image"></div>
+                <span class="what-about-results-card-title">METALURGIE</span>
+                <div class="what-about-results-hover-buttons">
+                  <button class="what-about-results-hover-button what-about-results-hover-button-bottom" aria-label="Detalii Despre Industria Metalurgie">
+                    DETALII
+                  </button>
+                </div>
+              </div>
             </div>
-        </section>
-        
-        <section id="steps-to-success-section" class="steps-to-success-section">
+          </section>
+          
+          <section id="steps-to-success-section" class="steps-to-success-section">
             <h2>Dar Cum Îți Putem Garanta Rezultate?</h2>
             <h3>PRIN 3 PAȘI SIMPLI</h3>
             <div class="steps-buttons-container">
@@ -355,108 +314,188 @@ include 'includes/navbar.php';
             
             <!-- Connector element for the blob effect -->
             <div class="steps-connector"></div>
-          
+            
             <div class="steps-content-container">
               <div class="step-content active" data-step="1">
                 <i class="fa-solid fa-question"></i>
                 <p>
                   Ne informăm de problema care trebuie rezolvată și dacă trebuie să facturăm un produs, facem asta doar dacă considerăm că firma va implementa corect soluțiile noaste și vor obține rezultate excelente.                </p>
-              </div>
-              <div class="step-content" data-step="2">
-                <i class="fa-solid fa-lightbulb"></i>
-                <p>
-                  In mod normal cu pasul 1 deja vom sti ce produsul poate rezolva probme dar daca este necesar unul dintre inginerii noștri de presales, specializat in domeniul va studia nevoia deplasându-se la locația ta, dacă este necesar.                </p>
-              </div>
-              <div class="step-content" data-step="3">
-                <i class="fa-solid fa-circle-check"></i>
-                <p>
-                  Recomandă soluția sau setul de soluții specifice pentru cazul concret se trimit și se fac testele. Nu trebuie să plătești nimic până când nu ești de acord cu soluția.                 </p>
-              </div>
-            </div>
-        </section>
-          
-        <!-- Contact Industries Section -->
-        <section class="contact-industries-section">
-            <h2>Vrei să afli mai mult?</h2>
-            <div class="industry-row">
-                <i class="fas fa-utensils"></i>
-                <span>Industria Alimentară</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="alimentara" aria-label="Vorbește cu un consultant pentru Industria Alimentară">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-            
-            <div class="industry-row">
-                <i class="fa-solid fa-bed"></i>
-                <span>Industria HORECA</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="horeca" aria-label="Vorbește cu un consultant pentru Industria HORECA">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-
-            <div class="industry-row">
-                <i class="fa-solid fa-person-digging"></i>
-                <span>Industria Construcții</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="construcții" aria-label="Vorbește cu un consultant pentru Industria Construcții">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-
-            <div class="industry-row">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <span>Industria Metalurgică</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="metalurgica" aria-label="Vorbește cu un consultant pentru Industria Metalurgie">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-
-            <div class="industry-row">
-                <i class="fa-solid fa-car-side"></i>
-                <span>Industria Automotive</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="automotive" aria-label="Vorbește cu un consultant pentru Industria Automotive">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-
-            <div class="industry-row">
-                <i class="fa-solid fa-building-columns"></i>
-                <span>Instituții Publice</span>
-                <div class="industry-button-connector"></div>
-                <button class="contact-industry-btn" data-industry="institutii-publice" aria-label="Vorbește cu un consultant pentru Instituții Publice">
-                    Vorbeste cu un consultant specializat
-                </button>
-            </div>
-        </section>
-    </div>
-
-    <!-- Contact Form Modal -->
-    <div class="contact-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Contact Form</h2>
-            <form id="industry-contact-form">
-                <input type="hidden" id="selected-industry" name="industry">
-                <div class="form-group">
-                    <label>Name:</label>
-                    <input type="text" required>
                 </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" required>
+                <div class="step-content" data-step="2">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <p>
+                    In mod normal cu pasul 1 deja vom sti ce produsul poate rezolva probme dar daca este necesar unul dintre inginerii noștri de presales, specializat in domeniul va studia nevoia deplasându-se la locația ta, dacă este necesar.                </p>
+                  </div>
+                  <div class="step-content" data-step="3">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p>
+                      Recomandă soluția sau setul de soluții specifice pentru cazul concret se trimit și se fac testele. Nu trebuie să plătești nimic până când nu ești de acord cu soluția.                 </p>
+                    </div>
+                  </div>
+                </section>
+                
+                <!-- Contact Industries Section -->
+                <section class="contact-industries-section">
+                  <h2>Vrei să afli mai mult?</h2>
+                  <div class="industry-row">
+                    <i class="fas fa-utensils"></i>
+                    <span>Industria Alimentară</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="alimentara" aria-label="Vorbește cu un consultant pentru Industria Alimentară">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                  
+                  <div class="industry-row">
+                    <i class="fa-solid fa-bed"></i>
+                    <span>Industria HORECA</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="horeca" aria-label="Vorbește cu un consultant pentru Industria HORECA">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                  
+                  <div class="industry-row">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <span>Industria Construcții</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="construcții" aria-label="Vorbește cu un consultant pentru Industria Construcții">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                  
+                  <div class="industry-row">
+                    <i class="fa-solid fa-screwdriver"></i>
+                    <span>Industria Metalurgică</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="metalurgica" aria-label="Vorbește cu un consultant pentru Industria Metalurgie">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                  
+                  <div class="industry-row">
+                    <i class="fa-solid fa-car-side"></i>
+                    <span>Industria Automotive</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="automotive" aria-label="Vorbește cu un consultant pentru Industria Automotive">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                  
+                  <div class="industry-row">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Instituții Publice</span>
+                    <div class="industry-button-connector"></div>
+                    <button class="contact-industry-btn" data-industry="institutii-publice" aria-label="Vorbește cu un consultant pentru Instituții Publice">
+                      Vorbeste cu un consultant specializat
+                    </button>
+                  </div>
+                </section>
+                <!-- Companies Showcase (infinite logos) -->
+                <section class="companies-showcase">
+                  <div class="logo-carousel">
+                      <div class="logo-track">
+                          <!-- 1st track of logos -->
+                          <img 
+                            src="images/companies-logos/company-1.webp" 
+                            class="company-logo" alt="Client" width="150" height="100" loading="lazy"
+                          >
+                          <img 
+                            src="images/companies-logos/company-2.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-3.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-4.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client" 
+                          >
+                          <img 
+                            src="images/companies-logos/company-5.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-6.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-7.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-8.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                      </div>
+                      <div class="logo-track">
+                          <!-- 2nd track of logos -->
+                          <img 
+                            src="images/companies-logos/company-9.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-10.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-11.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-12.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-13.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-14.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-15.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-16.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                          <img 
+                            src="images/companies-logos/company-17.webp" width="150" height="100" loading="lazy"
+                            class="company-logo" alt="Client"
+                          >
+                      </div>
+                  </div>
+                </section>
+              </div>
+              
+              <!-- Contact Form Modal -->
+              <div class="contact-modal">
+                <div class="modal-content">
+                  <span class="close-modal">&times;</span>
+                  <h2>Contact Form</h2>
+                  <form id="industry-contact-form">
+                    <input type="hidden" id="selected-industry" name="industry">
+                    <div class="form-group">
+                      <label>Name:</label>
+                      <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Email:</label>
+                      <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Message:</label>
+                      <textarea required></textarea>
+                    </div>
+                    <button type="submit" aria-label="Trimite Formular Abonare la Newsletter">Send</button>
+                  </form>
                 </div>
-                <div class="form-group">
-                    <label>Message:</label>
-                    <textarea required></textarea>
-                </div>
-                <button type="submit" aria-label="Trimite Formular Abonare la Newsletter">Send</button>
-            </form>
-        </div>
-    </div>
-<?php
+              </div>
+              
+              <?php
 include 'includes/footer.php';
 ?>
