@@ -160,3 +160,9 @@
     bottom: 50%;
     margin-bottom: -1px;
 }
+
+@media (min-width: 1024px) {
+    .navbar {
+        max-width: 1200px;
+    }
+}

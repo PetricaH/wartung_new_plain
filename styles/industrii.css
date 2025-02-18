@@ -8,6 +8,14 @@
   --accent-text-color: #f7d100;
   --border-radius: 12px;
   --transition-speed: 0.25s;
+    --card-bg: #1B1B26;
+    --accent-color: #F7D100;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255,255,255,0.7);
+    --badge-bg: rgba(247,209,0,0.1);
+    --spec-bg: rgba(255,255,255,0.05);
+    --border-radius: 16px;
+    --transition: all 0.3s ease;
 }
 
   * {
@@ -26,6 +34,32 @@
   max-width: 1280px;
   padding: 0 2rem;
   margin: 100px auto 50px;
+}
+
+.btn-vezi-produs {
+  background-color: var(--main-btn-bg-color);
+  color: var(--main-btn-txt-color);
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  font-weight: normal;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-vezi-produs:hover {
+  border: 1px solid var(--accent-text-color);
+  cursor: pointer;
+  background-color: var(--main-btn-txt-color);
+  color: var(--main-btn-bg-color);
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.do-something-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
@@ -137,6 +171,16 @@
   font-size: 0.9rem;
 }
 
+.product-category {
+  color: var(--main-text-color);
+  font-size: 1rem;
+}
+
+.product-subcategory {
+  color: var(--main-text-color);
+  font-size: .8rem;
+}
+
 /* Enhanced Filter Controls */
 .filter-container {
   display: flex;
@@ -211,4 +255,270 @@
   .products-grid {
       grid-template-columns: 1fr;
   }
+}
+
+/* Industry Cards */
+.industry-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.industry-card {
+  background: var(--card-bg);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.industry-card:hover, 
+.industry-card:focus-visible,
+.industry-card.active {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.industry-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.industry-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border-color: var(--accent-color);
+}
+
+.product-header {
+  position: relative;
+  aspect-ratio: 16/10;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--spec-bg);
+  display: grid;
+  place-items: center;
+  color: var(--text-secondary);
+}
+
+.product-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--badge-bg);
+  backdrop-filter: blur(4px);
+}
+
+.category-badge {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.subcategory-badge {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.1);
+}
+
+.product-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.product-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.spec-item {
+  background: var(--spec-bg);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.spec-label {
+  color: var(--text-secondary);
+  margin-right: 0.5rem;
+}
+
+.spec-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.feature-item {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn-detalii, 
+.btn-contact {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-detalii {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-contact {
+  background: var(--accent-color);
+  color: #1B1B26;
+  border: none;
+}
+
+.btn-detalii:hover {
+  border-color: var(--accent-color);
+  background: rgba(247,209,0,0.1);
+}
+
+.btn-contact:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.modal-open {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
