@@ -37,6 +37,6 @@
         <li><a href="industrii.php">Industrii</a></li>
         <li><a href="https://drive.google.com/file/d/1MIgspYcDoRG6Vr8GeBEtT7zO0SzA2L-C/view?usp=sharing">Catalog</a></li>
         <li><a href="cariere.php">Cariere</a></li>
-        <li><a href="/pages/rezultate.php">Rezultate</a></li>
+        <li><a href="rezultate.php">Rezultate</a></li>
     </ul>
 </div>

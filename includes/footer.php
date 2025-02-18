@@ -6,7 +6,7 @@
         <li class="box-title">Link-uri Utile</li>
         <li>
           <ul>
-            <li><a href="{{ url('/') }}">Acasă</a></li>
+            <li><a href="/index.php">Acasă</a></li>
             <li><a href="{{ route('industrii') }}">Industrii</a></li>
             <li>
               <a href="https://drive.google.com/file/d/1MIgspYcDoRG6Vr8GeBEtT7zO0SzA2L-C/view" target="_blank">
@@ -112,7 +112,40 @@
   </div>
 </div>
 
-  <script src="dist/all.min.js"></script>
-  <!-- <script src="scripts/navbar.js"></script> -->
+<?php
+if (ENVIRONMENT === 'production') {
+    // Production: load page-specific minified JS files from /dist/scripts/ and shared minified JS files.
+    $currentFile = basename($_SERVER['PHP_SELF']); // e.g., index.php, product.php, etc.
+    $jsMap = [
+        'index.php'     => 'home.min.js',
+        'industrii.php' => 'industrii.min.js',
+        'product.php'   => 'product.min.js',
+        'rezultate.php' => 'rezultate.min.js',
+    ];
+    
+    if (isset($jsMap[$currentFile])) {
+        echo '<script src="/dist/scripts/' . htmlspecialchars($jsMap[$currentFile]) . '"></script>';
+    }
+    
+    // Always load shared JS files (minified versions)
+    echo '<script src="/dist/scripts/navbar.min.js"></script>';
+} else {
+    // Staging/Development: load individual unminified JS files from /scripts/.
+    $currentFile = basename($_SERVER['PHP_SELF']);
+    $jsMap = [
+        'index.php'     => 'home.js',
+        'industrii.php' => 'industrii.js',
+        'product.php'   => 'product.js',
+        'rezultate.php' => 'rezultate.js',
+    ];
+    
+    if (isset($jsMap[$currentFile])) {
+        echo '<script src="/scripts/' . htmlspecialchars($jsMap[$currentFile]) . '"></script>';
+    }
+    
+    // Always load shared JS files (unminified versions)
+    echo '<script src="/scripts/navbar.js"></script>';
+}
+?>
 </html>
 </body>

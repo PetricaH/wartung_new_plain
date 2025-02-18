@@ -21,6 +21,8 @@ if (!defined('DB_PORT')) {
     define('DB_PORT', 3307); // Replace 3306 with your actual port if different
 }
 
+define('ENVIRONMENT', 'staging');
+
 // Connect to the database
 $connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 

@@ -1,202 +1,214 @@
+/* Enhanced CSS */
 :root {
-    --main-btn-bg-color: #F7D100;
-    --main-btn-txt-color: #1e1e1e;
-    --main-text-color: #ffffff;
-    --site-bg-color: #242430;
-    --inside-cards-bg-color: #1B1B26;
-    --accent-text-color: #f7d100;
-  }
-  
+  --main-btn-bg-color: #F7D100;
+  --main-btn-txt-color: #1e1e1e;
+  --main-text-color: #ffffff;
+  --site-bg-color: #242430;
+  --inside-cards-bg-color: #1B1B26;
+  --accent-text-color: #f7d100;
+  --border-radius: 12px;
+  --transition-speed: 0.25s;
+}
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", serif;
+    font-family: "Inter", serif; 
   }
-  
-  body {
+
+  body  {
     background-color: var(--site-bg-color);
-    color: var(--main-text-color);
-    line-height: 1.5;
   }
   
-  /* Main Container */
+/* Improved Layout and Spacing */
+.body-container {
+  max-width: 1280px;
+  padding: 0 2rem;
+  margin: 100px auto 50px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.section-heading {
+  font-size: 2rem;
+  color: var(--accent-text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Enhanced Industry Cards */
+.industry-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.industry-card {
+  background: var(--inside-cards-bg-color);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-align: center;
+}
+
+.industry-card:hover, .industry-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: var(--accent-text-color);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.industry-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.industry-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-text-color);
+}
+
+.industry-subtypes {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+
+/* Improved Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: var(--inside-cards-bg-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed) ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-image-container {
+  aspect-ratio: 16/9;
+  background: #2d2d3a;
+  display: grid;
+  place-items: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-text-color);
+}
+
+.product-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Enhanced Filter Controls */
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filter-dropdown {
+  background: var(--inside-cards-bg-color);
+  color: var(--main-text-color);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+/* Loading and Error States */
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(247,209,0,0.2);
+  border-top-color: var(--accent-text-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b6b;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  background: #ff6b6b;
+  color: white;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Improved Accessibility */
+[aria-current="page"] {
+  color: var(--accent-text-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
   .body-container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 100px auto 50px;
-    padding: 0 20px;
+      padding: 0 1rem;
+      margin-top: 80px;
   }
-  
-  /* =========================
-     Industry Selection Section
-     ========================= */
-  #industry-selection {
-    margin-bottom: 50px;
-  }
-  
+
   .industry-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+      grid-template-columns: 1fr;
   }
-  
-  .industry-card {
-    background-color: var(--inside-cards-bg-color);
-    border-radius: 15px;
-    width: 250px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    padding: 20px;
-    text-align: center;
+
+  .section-header {
+      flex-direction: column;
+      align-items: stretch;
   }
-  
-  .industry-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  .products-grid {
+      grid-template-columns: 1fr;
   }
-  
-  .industry-card h3 {
-    font-size: 1.8rem;
-    color: var(--accent-text-color);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-  }
-  
-  /* Industry Button */
-  .industry-select-btn {
-    background-color: var(--main-btn-bg-color);
-    color: var(--main-btn-txt-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-  }
-  
-  .industry-select-btn:hover {
-    transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* =========================
-     Products Section
-     ========================= */
-  #products-section {
-    margin-top: 50px;
-  }
-  
-  /* Breadcrumb Navigation */
-  .breadcrumb {
-    margin-bottom: 20px;
-    font-size: 1rem;
-  }
-  
-  .breadcrumb a {
-    color: var(--accent-text-color);
-    text-decoration: none;
-    margin-right: 5px;
-  }
-  
-  .breadcrumb span {
-    margin-right: 5px;
-  }
-  
-  /* Products Container */
-  #products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  /* =========================
-     Product Card Styling
-     ========================= */
-  .product-card {
-    background-color: var(--inside-cards-bg-color);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .product-card h4 {
-    font-size: 1.5rem;
-    color: var(--accent-text-color);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  
-  .product-card p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-  
-  .product-card p strong {
-    color: var(--accent-text-color);
-  }
-  
-  /* Vezi Produs Button */
-  .btn-vezi-produs {
-    display: inline-block;
-    background-color: var(--main-btn-bg-color);
-    color: var(--main-btn-txt-color);
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .btn-vezi-produs:hover {
-    transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* =========================
-     Responsive Adjustments
-     ========================= */
-  @media (max-width: 768px) {
-    .industry-card {
-      width: 90%;
-      height: auto;
-      padding: 30px 20px;
-    }
-    
-    .industry-card h3 {
-      font-size: 1.5rem;
-    }
-    
-    .industry-select-btn {
-      font-size: 0.9rem;
-    }
-    
-    .product-card {
-      padding: 15px;
-    }
-    
-    .product-card h4 {
-      font-size: 1.3rem;
-    }
-    
-    .product-card p {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

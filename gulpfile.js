@@ -1,23 +1,23 @@
 const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
-const concat = require('gulp-concat');
+const rename = require('gulp-rename');
 
-// Task to minify JavaScript files
+// Task to minify JavaScript files individually
 gulp.task('minify-js', () => {
   return gulp.src('scripts/*.js') // Adjust the source path to your scripts directory
     .pipe(uglify())
-    .pipe(concat('all.min.js'))
-    .pipe(gulp.dest('dist')); // Adjust the destination path as needed
+    .pipe(rename({ suffix: '.min' })) // Append .min to each file
+    .pipe(gulp.dest('dist/scripts')); // Output to a separate directory
 });
 
-// Task to minify CSS files
+// Task to minify CSS files individually
 gulp.task('minify-css', () => {
   return gulp.src('styles/*.css') // Adjust the source path to your styles directory
     .pipe(cssnano())
-    .pipe(concat('all.min.css'))
-    .pipe(gulp.dest('dist')); // Adjust the destination path as needed
+    .pipe(rename({ suffix: '.min' })) // Append .min to each file
+    .pipe(gulp.dest('dist/styles')); // Output to a separate directory
 });
 
-// Default task to run both minify tasks
+// Default task to run both minify tasks in parallel
 gulp.task('default', gulp.parallel('minify-js', 'minify-css'));

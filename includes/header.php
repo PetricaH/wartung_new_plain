@@ -1,30 +1,76 @@
+<?php
+// Check if SEO variables are already defined; if not, use defaults.
+$pageTitle = isset($pageTitle) ? $pageTitle : 'Acasă | Wartung';
+$pageDescription = isset($pageDescription) ? $pageDescription : 'Descoperă produse de întreținere certificate și eco de la Wartung. Soluții eficiente pentru curățenie, lubrifiere, construcții și metalurgie.';
+$pageKeywords = isset($pageKeywords) ? $pageKeywords : 'produse întreținere, curățenie eco, lubrifiere, construcții, metalurgie, Wartung';
+
+if (!defined('ENVIRONMENT')) {
+    require_once __DIR__ . '/configuration.php';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle ?? 'Acasă | Wartung'; ?></title>
-    <meta name="description" content="<?php echo $pageDescription ?? 'Descoperă produse de întreținere certificate și eco de la Wartung. Soluții eficiente pentru curățenie, lubrifiere, construcții și metalurgie.'; ?>">
-    <meta name="keywords" content="<?php echo $pageKeywords ?? 'produse întreținere, curățenie eco, lubrifiere, construcții, metalurgie, Wartung'; ?>">
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
     <meta name="author" content="Wartung">
     <meta name="robots" content="index, follow">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.yourwebsite.com/<?php echo basename($_SERVER['PHP_SELF']); ?>" />
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="<?php echo $pageTitle ?? 'Acasă | Wartung'; ?>">
-    <meta property="og:description" content="<?php echo $pageDescription ?? 'Descoperă produse de întreținere certificate și eco de la Wartung. Soluții eficiente pentru curățenie, lubrifiere, construcții și metalurgie.'; ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <meta property="og:image" content="https://www.yourwebsite.com/resources/images/logo.png">
     <meta property="og:url" content="https://www.yourwebsite.com/<?php echo basename($_SERVER['PHP_SELF']); ?>">
     <meta property="og:type" content="website">
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo $pageTitle ?? 'Acasă | Wartung'; ?>">
-    <meta name="twitter:description" content="<?php echo $pageDescription ?? 'Descoperă produse de întreținere certificate și eco de la Wartung. Soluții eficiente pentru curățenie, lubrifiere, construcții și metalurgie.'; ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <meta name="twitter:image" content="https://www.yourwebsite.com/resources/images/logo.png">
-    <!-- Load CSS -->
-    <link rel="stylesheet" href="dist/all.min.css">
-    <!-- <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/navbar.css"> -->
+
+    <!-- CSS Loading Logic -->
+    <?php
+    if (ENVIRONMENT === 'production') {
+        // Production: load page-specific minified CSS files from /dist/styles/ and shared minified CSS files.
+        $currentFile = basename($_SERVER['PHP_SELF']); // e.g., index.php, product.php, etc.
+        $cssMap = [
+            'index.php'     => 'home.min.css',
+            'industrii.php' => 'industrii.min.css',
+            'product.php'   => 'product.min.css',
+            'rezultate.php' => 'rezultate.min.css',
+        ];
+        
+        if (isset($cssMap[$currentFile])) {
+            echo '<link rel="stylesheet" href="/dist/styles/' . htmlspecialchars($cssMap[$currentFile]) . '">';
+        }
+        
+        // Always load shared CSS files (minified versions)
+        echo '<link rel="stylesheet" href="/dist/styles/footer.min.css">';
+        echo '<link rel="stylesheet" href="/dist/styles/navbar.min.css">';
+    } else {
+        // Staging/Development: load individual unminified CSS files from /styles/.
+        $currentFile = basename($_SERVER['PHP_SELF']);
+        $cssMap = [
+            'index.php'     => 'home.css',
+            'industrii.php' => 'industrii.css',
+            'product.php'   => 'product.css',
+            'rezultate.php' => 'rezultate.css',
+        ];
+        
+        if (isset($cssMap[$currentFile])) {
+            echo '<link rel="stylesheet" href="/styles/' . htmlspecialchars($cssMap[$currentFile]) . '">';
+        }
+        
+        // Always load shared CSS files
+        echo '<link rel="stylesheet" href="/styles/footer.css">';
+        echo '<link rel="stylesheet" href="/styles/navbar.css">';
+    }
+    ?>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -35,7 +81,6 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="resources/images/favicon.png">
-    
     <link rel="preload" href="/images/hero-bg-top-layer.webp" as="image">
 
     <style>

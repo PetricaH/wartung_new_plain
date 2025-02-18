@@ -2,165 +2,173 @@
 require_once 'includes/configuration.php';
 require_once 'includes/functions.php';
 
-// Get URL parameters
-$category_slug = isset($_GET['cat']) ? $_GET['cat'] : '';
-$subcategory_slug = isset($_GET['sub']) ? $_GET['sub'] : '';
-$product_slug = isset($_GET['slug']) ? $_GET['slug'] : '';
+/*
+ * Table: admin_products
+ *
+ * Columns:
+ * - product_id (int, auto_increment, primary key): Unique identifier for the product.
+ * - name (varchar(255)): The name or title of the product.
+ * - subtitle (varchar(255)): An optional subtitle for the product.
+ * - description (text): A short description or detailed information about the product.
+ * - seo_title (varchar(255)): The title used for SEO purposes.
+ * - seo_description (text): The meta description used for SEO.
+ * - seo_keywords (varchar(255)): SEO keywords, typically separated by commas.
+ * - created_at (timestamp): The date and time when the product was created (defaults to CURRENT_TIMESTAMP).
+ * - updated_at (timestamp): The date and time when the product was last updated (auto-updated on modification).
+ * - category_id (int): Foreign key linking to admin_categories(id), indicating the product's category.
+ * - subcategory_id (int): Foreign key linking to admin_subcategories(subcategory_id), indicating the product's subcategory.
+ * - slug (varchar(255)): A URL-friendly version of the product name.
+ */
 
-// Get product details with joins for category and subcategory
-$query = "SELECT p.*, c.name as category_name, c.slug as category_slug, 
-          s.name as subcategory_name, s.slug as subcategory_slug,
-          pc.content_html as blog_content
-          FROM admin_products p
-          LEFT JOIN admin_categories c ON p.category_id = c.id
-          LEFT JOIN admin_subcategories s ON p.subcategory_id = s.id
-          LEFT JOIN admin_product_content pc ON p.product_id = pc.product_id
-          WHERE p.slug = ?";
-
-$stmt = $connection->prepare($query);
-$stmt->bind_param("s", $product_slug);
-$stmt->execute();
-$product = $stmt->get_result()->fetch_assoc();
-
-if (!$product) {
-    header("HTTP/1.0 404 Not Found");
-    include '404.php';
-    exit;
+// Check if the product ID is provided via the URL; if not, exit with an error message
+if (!isset($_GET['id'])) {
+    die("Product id is missing.");
 }
 
-// Get product images
-$img_query = "SELECT * FROM admin_product_images 
-              WHERE product_id = ? 
-              ORDER BY is_primary DESC, display_order ASC";
-$img_stmt = $connection->prepare($img_query);
-$img_stmt->bind_param("i", $product['product_id']);
-$img_stmt->execute();
-$images = $img_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+// Sanitize and store the product ID from the URL parameter
+$productId = intval($_GET['id']);
 
-// Get product characteristics
-$char_query = "SELECT * FROM admin_product_characteristics 
-               WHERE product_id = ?";
-$char_stmt = $connection->prepare($char_query);
-$char_stmt->bind_param("i", $product['product_id']);
-$char_stmt->execute();
-$characteristics = $char_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+// Updated query to fetch all the necessary product information
+$query = "
+    SELECT 
+        p.*, 
+        c.name AS category_name, 
+        s.name AS subcategory_name, 
+        MAX(CASE WHEN i.is_primary = 1 THEN i.image_path END) AS primary_image,
+        GROUP_CONCAT(DISTINCT i.image_path ORDER BY i.is_primary DESC, i.display_order ASC SEPARATOR ',') AS all_images,
+        GROUP_CONCAT(DISTINCT apc.name SEPARATOR '||') AS characteristics,
+        MAX(pc.content_html) AS blog_content
+    FROM admin_products p
+    LEFT JOIN admin_categories c ON c.id = p.category_id
+    LEFT JOIN admin_subcategories s ON s.subcategory_id = p.subcategory_id
+    LEFT JOIN admin_product_images i ON i.product_id = p.product_id
+    LEFT JOIN admin_product_characteristics apc ON apc.product_id = p.product_id
+    LEFT JOIN admin_product_content pc ON pc.product_id = p.product_id
+    WHERE p.product_id = ?
+    GROUP BY p.product_id
+";
 
-// Set meta tags for SEO
-$pageTitle = $product['seo_title'] ?: $product['name'];
-$pageDescription = $product['seo_description'];
-$pageKeywords = $product['seo_keywords'];
+// Prepare and execute the SQL statement
+$stmt = $connection->prepare($query);
+if (!$stmt) {
+    die("Prepare failed: " . $connection->error);
+}
+$stmt->bind_param("i", $productId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the product data as an associative array; if not found, exit with an error message
+$product = $result->fetch_assoc();
+if (!$product) {
+    die("Product not found.");
+}
+$stmt->close();
+
+// Base URL for product images (adjust as needed)
+$baseImageUrl = "/shared_images/product_images/";
+
+// Convert aggregated fields (all_images and characteristics) into arrays
+$allImages = !empty($product['all_images']) ? explode(",", $product['all_images']) : [];
+$characteristics = !empty($product['characteristics']) ? explode("||", $product['characteristics']) : [];
+
+// Set SEO values based on product data with fallbacks
+$seoTitle = !empty($product['seo_title']) ? $product['seo_title'] : $product['name'];
+$seoDescription = !empty($product['seo_description']) 
+    ? $product['seo_description'] 
+    : substr(strip_tags($product['description']), 0, 160);
+$seoKeywords = !empty($product['seo_keywords']) ? $product['seo_keywords'] : '';
+
+// Set the SEO variables to be used in header.php
+$pageTitle = $seoTitle;
+$pageDescription = $seoDescription;
+$pageKeywords = $seoKeywords;
+if (ENVIRONMENT === 'staging') {
+    $pageCSS = '/styles/product.css'; // Path to your product-specific CSS file
+}
+include 'includes/header.php';
+include 'includes/navbar.php';
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-    <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
-    <link rel="stylesheet" href="/styles/product.css">
+    <!-- Note: The SEO meta tags here will be overridden by header.php -->
+    <!-- Link to additional CSS for product-specific styling if needed -->
+    <link rel="stylesheet" href="/path/to/your/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="body-container">
         <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-            <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <?php if ($product['category_name']): ?>
-                <li><a href="/<?php echo htmlspecialchars($product['category_slug']); ?>/">
-                    <?php echo htmlspecialchars($product['category_name']); ?>
-                </a></li>
-                <?php endif; ?>
-                
-                <?php if ($product['subcategory_name']): ?>
-                <li><a href="/<?php echo htmlspecialchars($product['category_slug']); ?>/<?php echo htmlspecialchars($product['subcategory_slug']); ?>/">
-                    <?php echo htmlspecialchars($product['subcategory_name']); ?>
-                </a></li>
-                <?php endif; ?>
-                
-                <li aria-current="page"><?php echo htmlspecialchars($product['name']); ?></li>
-            </ol>
-        </nav>
+        <div class="breadcrumb">
+            <a href="index.php">Home</a> <span>/</span>
+            <a href="industrii.php?industry=<?php echo urlencode($product['category_name']); ?>">
+                <?php echo htmlspecialchars($product['category_name'] ?? 'N/A'); ?>
+            </a> <span>/</span>
+            <span><?php echo htmlspecialchars($product['name']); ?></span>
+        </div>
 
-        <!-- Product Header -->
-        <header class="product-header">
+        <div class="product-card">
             <h1><?php echo htmlspecialchars($product['name']); ?></h1>
-            <?php if ($product['subtitle']): ?>
-            <p class="subtitle"><?php echo htmlspecialchars($product['subtitle']); ?></p>
-            <?php endif; ?>
-        </header>
+            <p><strong>Categorie:</strong> <?php echo htmlspecialchars($product['category_name'] ?? 'N/A'); ?></p>
+            <p><strong>Subcategorie:</strong> <?php echo htmlspecialchars($product['subcategory_name'] ?? 'N/A'); ?></p>
 
-        <!-- Product Content -->
-        <div class="product-content">
-            <!-- Image Gallery -->
-            <div class="product-gallery">
-                <div class="main-image">
-                    <?php if (!empty($images)): ?>
-                    <img src="/product_images/<?php echo htmlspecialchars($images[0]['image_path']); ?>"
-                         alt="<?php echo htmlspecialchars($images[0]['alt_text']); ?>"
-                         id="main-product-image">
+            <!-- Desktop Product Image -->
+            <?php if (!empty($product['primary_image'])): ?>
+                <img src="<?php echo htmlspecialchars($baseImageUrl . $product['primary_image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+            <?php else: ?>
+                <p>No image available.</p>
+            <?php endif; ?>
+
+            <!-- Mobile Gallery -->
+            <div class="mobile-gallery">
+                <div class="big-image">
+                    <?php 
+                    // Default image: primary image if available, or the first image from all_images
+                    $defaultImage = !empty($product['primary_image'])
+                        ? $baseImageUrl . $product['primary_image']
+                        : (isset($allImages[0]) ? $baseImageUrl . $allImages[0] : '');
+                    ?>
+                    <?php if ($defaultImage): ?>
+                        <img src="<?php echo htmlspecialchars($defaultImage); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" id="main-mobile-image">
+                    <?php else: ?>
+                        <p>No image available.</p>
                     <?php endif; ?>
                 </div>
-                
-                <?php if (count($images) > 1): ?>
-                <div class="thumbnail-gallery">
-                    <?php foreach ($images as $index => $image): ?>
-                    <img src="/product_images/<?php echo htmlspecialchars($image['image_path']); ?>"
-                         alt="<?php echo htmlspecialchars($image['alt_text']); ?>"
-                         onclick="updateMainImage(this.src, this.alt)"
-                         class="thumbnail <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <?php endforeach; ?>
-                </div>
-                <?php endif; ?>
-            </div>
-
-            <!-- Product Details -->
-            <div class="product-details">
-                <?php if ($product['description']): ?>
-                <div class="description">
-                    <?php echo nl2br(htmlspecialchars($product['description'])); ?>
-                </div>
-                <?php endif; ?>
-
-                <?php if (!empty($characteristics)): ?>
-                <div class="characteristics">
-                    <h2>Product Characteristics</h2>
-                    <div class="characteristics-grid">
-                        <?php foreach ($characteristics as $char): ?>
-                        <div class="characteristic-item">
-                            <span class="char-name"><?php echo htmlspecialchars($char['name']); ?></span>
-                            <span class="char-value"><?php echo htmlspecialchars($char['value']); ?></span>
-                        </div>
+                <?php if (count($allImages) > 1): ?>
+                    <div class="thumbnail-container">
+                        <?php foreach ($allImages as $img): ?>
+                            <div class="thumbnail" onclick="document.getElementById('main-mobile-image').src='<?php echo htmlspecialchars($baseImageUrl . $img); ?>'">
+                                <img src="<?php echo htmlspecialchars($baseImageUrl . $img); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                            </div>
                         <?php endforeach; ?>
                     </div>
-                </div>
                 <?php endif; ?>
             </div>
-        </div>
 
-        <!-- Blog Content -->
-        <?php if ($product['blog_content']): ?>
-        <div class="blog-content">
-            <?php echo $product['blog_content']; ?>
+            <!-- Product Characteristics -->
+            <?php if (!empty($characteristics)): ?>
+                <div class="product-characteristics">
+                    <?php foreach ($characteristics as $char): ?>
+                        <div class="characteristic"><?php echo htmlspecialchars($char); ?></div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- Short Product Description -->
+            <div class="short-description">
+                <?php echo nl2br(htmlspecialchars($product['description'])); ?>
+            </div>
+
+            <!-- Blog Content -->
+            <?php if (!empty($product['blog_content'])): ?>
+                <div class="blog-content">
+                    <?php 
+                        // Display blog content with HTML formatting
+                        echo $product['blog_content']; 
+                    ?>
+                </div>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
     </div>
 
-    <script>
-    function updateMainImage(src, alt) {
-        const mainImage = document.getElementById('main-product-image');
-        mainImage.src = src;
-        mainImage.alt = alt;
-        
-        // Update thumbnail active state
-        document.querySelectorAll('.thumbnail').forEach(thumb => {
-            thumb.classList.remove('active');
-            if (thumb.src === src) {
-                thumb.classList.add('active');
-            }
-        });
-    }
-    </script>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
