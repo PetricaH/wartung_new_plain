@@ -1,6 +1,6 @@
 <?php
 function verifyRecaptcha($token) {
-    $secretKey = '6LdS-dsqAAAAAKxw_yOmDo-4ftS8dZNzh8gmeXkY'; // from reCAPTCHA v2 Admin Console
+    $secretKey = 'apikey-deleted-bcs-of-github'; // from reCAPTCHA v2 Admin Console
     $url = 'https://www.google.com/recaptcha/api/siteverify';
 
     $data = [
