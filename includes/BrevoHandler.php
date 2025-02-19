@@ -7,7 +7,7 @@ use Brevo\Client\Model\CreateContact;
 use Brevo\Client\Model\UpdateContact;
 
 class BrevoHandler {
-    private $apiKey = 'apikey-deleted-bcs-of-github';
+    private $apiKey = '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';
     private $pendingListId = 208;
     private $confirmedListId = 209;
 
