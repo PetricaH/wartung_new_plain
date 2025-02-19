@@ -87,19 +87,19 @@ include 'includes/navbar.php';
         <div class="certificates-carousel">
             <!-- All images use plain PHP for asset paths -->
             <img 
-              src="images/certificates-imgs/certificate-one.webp" loading="lazy"
+              src="images/certificates-imgs/certificate-one.webp" loading="lazy" width="150" height="100"
               alt="Certificat Acreditare NSF"
             >
             <img 
-              src="images/certificates-imgs/certificate-two.webp" loading="lazy"
+              src="images/certificates-imgs/certificate-two.webp" loading="lazy" width="150" height="100"
               alt="Certificat Acreditare ISO 9001"
             >
             <img 
-              src="images/certificates-imgs/certificate-three.webp" loading="lazy"
+              src="images/certificates-imgs/certificate-three.webp" loading="lazy" width="150" height="100"
               alt="Certificat Acreditare CE"
             >
             <img 
-              src="images/certificates-imgs/certificate-four.webp" loading="lazy"
+              src="images/certificates-imgs/certificate-four.webp" loading="lazy" width="150" height="100"
               alt="Certificat Acreditare ISO 14001"
             >
         </div>
@@ -135,62 +135,62 @@ include 'includes/navbar.php';
                 <div class="carousel-track">
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/complex-muzeal-bistrita-nasaud.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/complex-muzeal-bistrita-nasaud.webp" loading="lazy" width="150" height="100"
                       alt="Certificate One"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/elcen.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/elcen.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Two"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/mapn.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/mapn.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/municipiul-lupeni.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/municipiul-lupeni.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Four"
                     >
                   </div>
                   <div class="carousel-track">
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/nustiu.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/nustiu.webp" loading="lazy" width="150" height="100"
                       alt="Certificate One"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/primaria-bolintin.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/primaria-bolintin.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Two"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/primaria-comarnic.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/primaria-comarnic.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/primaria-negresti-oas.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/primaria-negresti-oas.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Four"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/ratbv.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/ratbv.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Three"
                     >
                   </div>
                   <div class="carousel-item">
                     <img 
-                      src="images/companii_cu_care_am_lucrat/salubritate-craiova.webp" loading="lazy"
+                      src="images/companii_cu_care_am_lucrat/salubritate-craiova.webp" loading="lazy" width="150" height="100"
                       alt="Certificate Four"
                     >
                   </div>

@@ -92,9 +92,6 @@ include 'includes/navbar.php';
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <!-- Note: The SEO meta tags here will be overridden by header.php -->
-    <!-- Link to additional CSS for product-specific styling if needed -->
-    <link rel="stylesheet" href="/path/to/your/style.css">
 </head>
 <body>
     <div class="body-container">
@@ -107,68 +104,163 @@ include 'includes/navbar.php';
             <span><?php echo htmlspecialchars($product['name']); ?></span>
         </div>
 
-        <div class="product-card">
+        <div class="product-container">
+        <div class="product-header">
             <h1><?php echo htmlspecialchars($product['name']); ?></h1>
-            <p><strong>Categorie:</strong> <?php echo htmlspecialchars($product['category_name'] ?? 'N/A'); ?></p>
-            <p><strong>Subcategorie:</strong> <?php echo htmlspecialchars($product['subcategory_name'] ?? 'N/A'); ?></p>
+            <div class="category-info">
+                <?php if (!empty($product['category_name'])): ?>
+                    <span><?php echo htmlspecialchars($product['category_name']); ?></span>
+                    <?php if (!empty($product['subcategory_name'])): ?>
+                        <span> / <?php echo htmlspecialchars($product['subcategory_name']); ?></span>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
 
-            <!-- Desktop Product Image -->
-            <?php if (!empty($product['primary_image'])): ?>
-                <img src="<?php echo htmlspecialchars($baseImageUrl . $product['primary_image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
-            <?php else: ?>
-                <p>No image available.</p>
-            <?php endif; ?>
-
-            <!-- Mobile Gallery -->
-            <div class="mobile-gallery">
-                <div class="big-image">
-                    <?php 
-                    // Default image: primary image if available, or the first image from all_images
-                    $defaultImage = !empty($product['primary_image'])
-                        ? $baseImageUrl . $product['primary_image']
-                        : (isset($allImages[0]) ? $baseImageUrl . $allImages[0] : '');
-                    ?>
-                    <?php if ($defaultImage): ?>
-                        <img src="<?php echo htmlspecialchars($defaultImage); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" id="main-mobile-image">
+        <div class="product-grid">
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <?php if (!empty($product['primary_image'])): ?>
+                        <img id="mainImage" src="<?php echo htmlspecialchars($baseImageUrl . $product['primary_image']); ?>" 
+                             alt="<?php echo htmlspecialchars($product['name']); ?>">
                     <?php else: ?>
-                        <p>No image available.</p>
+                        <div class="placeholder-image">
+                            📷
+                        </div>
                     <?php endif; ?>
                 </div>
                 <?php if (count($allImages) > 1): ?>
-                    <div class="thumbnail-container">
+                    <div class="thumbnail-grid">
                         <?php foreach ($allImages as $img): ?>
-                            <div class="thumbnail" onclick="document.getElementById('main-mobile-image').src='<?php echo htmlspecialchars($baseImageUrl . $img); ?>'">
-                                <img src="<?php echo htmlspecialchars($baseImageUrl . $img); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                            <div class="thumbnail" onclick="changeMainImage('<?php echo htmlspecialchars($baseImageUrl . $img); ?>')">
+                                <img src="<?php echo htmlspecialchars($baseImageUrl . $img); ?>" 
+                                     alt="Thumbnail of <?php echo htmlspecialchars($product['name']); ?>">
                             </div>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             </div>
 
-            <!-- Product Characteristics -->
-            <?php if (!empty($characteristics)): ?>
-                <div class="product-characteristics">
-                    <?php foreach ($characteristics as $char): ?>
-                        <div class="characteristic"><?php echo htmlspecialchars($char); ?></div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
+            <div class="product-info">
+                <?php if (!empty($characteristics)): ?>
+                    <div class="characteristics">
+                        <?php foreach ($characteristics as $char): ?>
+                            <span class="characteristic"><?php echo htmlspecialchars($char); ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
 
-            <!-- Short Product Description -->
-            <div class="short-description">
-                <?php echo nl2br(htmlspecialchars($product['description'])); ?>
+                <div class="product-description">
+                    <?php echo nl2br(htmlspecialchars($product['description'])); ?>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-fisa" onclick="showDatasheetModal('<?php echo $productId; ?>', '<?php echo htmlspecialchars($product['name']); ?>')">
+                        <span class="icon">📄</span>
+                        Descarcă fișa tehnică
+                    </button>
+                    <button class="btn-oferta" onclick="showOfferModal('<?php echo $productId; ?>', '<?php echo htmlspecialchars($product['name']); ?>')">
+                        <span class="icon">💬</span>
+                        Cere o ofertă
+                    </button>
+                </div>
             </div>
-
-            <!-- Blog Content -->
-            <?php if (!empty($product['blog_content'])): ?>
-                <div class="blog-content">
-                    <?php 
-                        // Display blog content with HTML formatting
-                        echo $product['blog_content']; 
-                    ?>
-                </div>
-            <?php endif; ?>
         </div>
+
+        <?php if (!empty($product['blog_content'])): ?>
+            <div class="blog-content">
+                <?php echo $product['blog_content']; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
+<!-- Datasheet Request Modal -->
+<div id="datasheetModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModals()">&times;</span>
+        <h2>Solicitare Fișă Tehnică</h2>
+        <p>Produs: <span class="product-name"></span></p>
+        <form id="datasheetForm" onsubmit="submitDatasheetForm(event)">
+            <input type="hidden" id="datasheetProductId" name="productId">
+            <input type="hidden" id="datasheetProductName" name="productName">
+            <input type="hidden" name="agreement_text" value="Accept să primesc newslettere și politica de confidențialitate">
+            <input type="hidden" name="ip_address" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+            <input type="hidden" name="agreement_timestamp" value="<?php echo date('Y-m-d H:i:s'); ?>">
+            
+            <div class="form-group">
+                <label for="datasheet-email">Email:</label>
+                <input type="email" id="datasheet-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="acceptNewsletter" required>
+                    Accept să primesc newslettere și politica de confidențialitate
+                </label>
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6LdS-dsqAAAAAMgdYbeANtunCO2x1Eqd9ChD_EMh"></div>
+            
+            <button type="submit" class="form-submit">Trimite solicitarea</button>
+        </form>
+    </div>
+</div>
+
+<!-- Offer Request Modal -->
+<div id="offerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModals()">&times;</span>
+        <h2>Solicitare Ofertă</h2>
+        <p>Produs: <span class="product-name"></span></p>
+        <form id="offerForm" onsubmit="submitOfferForm(event)">
+            <input type="hidden" id="offerProductId" name="productId">
+            <input type="hidden" id="offerProductName" name="productName">
+            
+            <div class="form-group">
+                <label for="offer-company">Nume firmă:</label>
+                <input type="text" id="offer-company" name="company" required>
+            </div>
+
+            <div class="form-group">
+                <label for="offer-cui">CUI:</label>
+                <input type="text" id="offer-cui" name="cui" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="offer-name">Nume contact:</label>
+                <input type="text" id="offer-name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="offer-email">Email:</label>
+                <input type="email" id="offer-email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="offer-phone">Telefon:</label>
+                <input type="tel" id="offer-phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="offer-message">Mesaj:</label>
+                <textarea id="offer-message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="acceptNewsletter" required>
+                    Accept să primesc newslettere și politica de confidențialitate
+                </label>
+            </div>
+
+            <input type="hidden" name="agreement_text" value="Accept să primesc newslettere și politica de confidențialitate">
+            <input type="hidden" name="ip_address" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+            <input type="hidden" name="agreement_timestamp" value="<?php echo date('Y-m-d H:i:s'); ?>">
+
+            <div class="g-recaptcha" data-sitekey="6LdS-dsqAAAAAMgdYbeANtunCO2x1Eqd9ChD_EMh"></div>
+            
+            <button type="submit" class="form-submit">Trimite solicitarea</button>
+        </form>
+    </div> 
+</div>
 <?php include 'includes/footer.php'; ?>

@@ -33,6 +33,9 @@ if (!defined('ENVIRONMENT')) {
     <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <meta name="twitter:image" content="https://www.yourwebsite.com/resources/images/logo.png">
 
+    <!-- RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- CSS Loading Logic -->
     <?php
     if (ENVIRONMENT === 'production') {

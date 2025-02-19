@@ -104,10 +104,10 @@
   <!-- Certificates Section -->
   <div class="certificates">
     <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
-      <img style="width:250px;margin:5px;" src="images/anpc-sal.webp" loading="lazy" alt="Solutionarea Alternativa a Litigiilor">
+      <img style="width:250px;margin:5px;" src="images/anpc-sal.webp" loading="lazy" width="150" height="65" alt="Solutionarea Alternativa a Litigiilor">
     </a><br/>
     <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
-      <img style="width:250px;margin:5px;" src="images/anpc-sol.webp" loading="lazy" alt="Solutionarea Online a Litigiilor">
+      <img style="width:250px;margin:5px;" src="images/anpc-sol.webp" loading="lazy" width="150" height="65" alt="Solutionarea Online a Litigiilor">
     </a>
   </div>
 </div>

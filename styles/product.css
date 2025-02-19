@@ -42,117 +42,232 @@
     text-decoration: underline;
   }
   
-  /* Product Card */
-  .product-card {
+  .product-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
     background-color: var(--inside-cards-bg-color);
-    padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(247, 209, 0, 0.2);
-  }
-  .product-card h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+}
+
+.product-header {
+    margin-bottom: 2rem;
+}
+
+.product-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
     color: var(--main-text-color);
-  }
-  .product-card p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-  
-  /* Desktop Product Image */
-  .product-card img {
+}
+
+.category-info {
+    color: var(--accent-text-color);
+    font-size: 0.9rem;
+}
+
+.product-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: minmax(300px, 500px) 1fr;
+        gap: 3rem;
+    }
+}
+
+.product-gallery {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 8px rgba(247, 209, 0, 0.2);
-  }
-  
-  /* Mobile Gallery */
-  .mobile-gallery {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-  .mobile-gallery .big-image {
-    width: 90%;
-    max-width: 400px;
-    height: 400px;
+}
+
+.main-image-container {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1rem;
     border-radius: 10px;
     overflow: hidden;
+    background-color: var(--inside-cards-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    box-shadow: 0 4px 8px rgba(247, 209, 0, 0.2);
-    margin-bottom: 1rem;
-  }
-  .mobile-gallery .big-image img {
+}
+
+.main-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  .mobile-gallery .thumbnail-container {
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-  }
-  .mobile-gallery .thumbnail {
-    width: 70px;
-    height: 70px;
+    background-color: #2a2a35;
+    color: var(--accent-text-color);
+    font-size: 3rem;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    aspect-ratio: 1;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border 0.3s ease;
-  }
- 
-  .mobile-gallery .thumbnail img {
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+    border-color: var(--accent-text-color);
+}
+
+.thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  /* Product Characteristics */
-  .product-characteristics {
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.characteristics {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .product-characteristics .characteristic {
-    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+}
+
+.characteristic {
     background-color: var(--main-btn-bg-color);
     color: var(--main-btn-txt-color);
-    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  /* Short Description */
-  .short-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Blog Content */
-  .blog-content {
-    font-size: 1rem;
+    font-weight: 500;
+}
+
+.product-description {
     line-height: 1.6;
     color: var(--main-text-color);
-  }
-  
-  /* Responsive Styles for Mobile Devices */
-  @media (max-width: 768px) {
-    /* Hide the default desktop image */
-    .product-card img {
-      display: none;
-    }
-    /* Display the mobile gallery */
-    .mobile-gallery {
-      display: flex;
-    }
-  }
-  
+}
+
+.product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.btn-fisa,
+.btn-oferta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.btn-fisa {
+    background-color: var(--main-btn-bg-color);
+    color: var(--main-btn-txt-color);
+}
+
+.btn-oferta {
+    background-color: var(--accent-text-color);
+    color: var(--main-btn-txt-color);
+}
+
+.btn-fisa:hover,
+.btn-oferta:hover {
+    transform: translateY(-2px);
+}
+
+.blog-content {
+    margin-top: 2rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--inside-cards-bg-color);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--accent-text-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--main-text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--accent-text-color);
+    background-color: var(--site-bg-color);
+    color: var(--main-text-color);
+}
+
+.form-submit {
+    background-color: var(--accent-text-color);
+    color: var(--main-btn-txt-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+}
