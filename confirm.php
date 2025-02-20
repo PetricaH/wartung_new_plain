@@ -8,7 +8,7 @@ use Brevo\Client\Model\UpdateContact;
 
 function confirmContactInBrevo($email) {
     $config = Configuration::getDefaultConfiguration()
-        ->setApiKey('api-key', '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');
+        ->setApiKey('api-key', 'deleted-for-github');
     
     $contactsApi = new ContactsApi(
         new GuzzleHttp\Client(),

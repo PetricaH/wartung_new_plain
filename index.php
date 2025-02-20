@@ -7,6 +7,231 @@ $pageKeywords = "produse întreținere, curățenie eco, lubrifiere, construcți
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>
+<style>
+  /* ----------------------------- */
+/*   WHAT ABOUT RESULTS CARDS    */
+/* ----------------------------- */
+
+/* General Styles (mobile-first) */
+.what-about-results-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    align-items: stretch; /* Stretch cards to full width */
+    justify-content: center;
+    width: 100%; /* Ensure container takes full width */
+}
+  
+  .what-about-results-card {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--inside-cards-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+
+    .what-about-results-card-title {
+        position: relative;
+        z-index: 2;
+        font-size: 2.5rem;
+        color: var(--accent-text-color);
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        transition: transform 0.3s ease;
+        top: -15%;
+      }
+
+        /* Hover Buttons */
+    .what-about-results-hover-buttons {
+        position: absolute;
+        top: 70% !important;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around !important;
+        transform: translateY(-50%);
+        opacity: 1; 
+        z-index: 2;
+    }
+    
+    .what-about-results-hover-button {
+        padding: 8px 15px;
+        background-color: var(--accent-text-color);
+        color: var(--main-btn-txt-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        z-index: 2;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .what-about-results-hover-button-bottom {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+  }
+
+  /* Desktop hover effects */
+  @media (min-width: 768px) {
+    .what-about-results-cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 0 auto;
+    }
+  
+    .what-about-results-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* Dual Image Background for CURATENIE Cards */
+  .what-about-results-dual-images {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .what-about-results-curatenie-image-left,
+  .what-about-results-curatenie-image-right,
+  .what-about-results-lubrifiere-image-left,
+  .what-about-results-lubrifiere-image-right {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Add color filter overlay to images */
+.what-about-results-curatenie-image-left::before,
+.what-about-results-curatenie-image-right::before,
+.what-about-results-lubrifiere-image-left::before,
+.what-about-results-lubrifiere-image-right::before,
+.what-about-results-single-constructii-image::before,
+.what-about-results-single-metalurgie-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(36, 36, 48, 0.5); /* Subtle color filter */
+    z-index: 1;
+}
+  
+  .what-about-results-curatenie-image-left {
+    background-image: url('/images/product-cards-imgs/left-curatenie.webp');
+  }
+  
+  .what-about-results-curatenie-image-right {
+    background-image: url('/images/product-cards-imgs/right-curatenie.webp');
+  }
+
+  .what-about-results-lubrifiere-image-left {
+    background-image: url('/images/product-cards-imgs/left-lubrifiere.webp');
+  }
+  
+  .what-about-results-lubrifiere-image-right {
+    background-image: url('/images/product-cards-imgs/right-lubrifiere.webp');
+  }
+  
+  
+  /* Single Image Background for SERVICII Cards */
+  .what-about-results-single-constructii-image,
+  .what-about-results-single-metalurgie-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .what-about-results-card-serv .what-about-results-single-constructii-image {
+    background-image: url('/images/product-cards-imgs/constructii.webp');
+  }
+
+  .what-about-results-card-serv .what-about-results-single-metalurgie-image {
+    background-image: url('/images/product-cards-imgs/metalurgie.webp');
+  }
+  
+  /* Card Title */
+  .what-about-results-card-title {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    color: var(--accent-text-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover Buttons */
+  .what-about-results-hover-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    opacity: 1; 
+    z-index: 2;
+  }
+  
+  .what-about-results-hover-button {
+    padding: 8px 15px;
+    background-color: var(--accent-text-color);
+    color: var(--main-btn-txt-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .what-about-results-hover-button-bottom {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  
+  /* Desktop Hover Effects for Buttons */
+  @media (min-width: 768px) {
+    .what-about-results-hover-buttons {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .what-about-results-card:hover .what-about-results-hover-buttons {
+      opacity: 1;
+    }
+    .what-about-results-card:hover .what-about-results-card-title {
+      transform: translateY(-50px);
+    }
+    .what-about-results-card:hover .what-about-results-hover-button-left {
+      transform: translateX(20px);
+    }
+    .what-about-results-card:hover .what-about-results-hover-button-right {
+      transform: translateX(-20px);
+    }
+  }
+</style>
     <section id="hero-section">
         <div class="hero-text-part">
             <h1>Produse de Întreținere Certificate și Eco</h1>
@@ -118,7 +343,10 @@ include 'includes/navbar.php';
                 </button>
             </div>
             <p>
-                “Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            „Am testat produsul și sunt foarte mulțumit de rezultat. 
+            Curățarea s-a făcut eficient, iar tot procesul a decurs rapid și fără probleme. 
+            Mulțumesc pentru produsul oferit, cu siguranță îl 
+            vom folosi în continuare!”
             </p>
             <span class="testi-bar"></span>
             <span class="testi-name">Mihai</span>
@@ -218,7 +446,9 @@ include 'includes/navbar.php';
           </button>  
         </div>
         <p>
-          “Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+        „Am testat produsul și rezultatele au fost excelente. 
+        Curățarea s-a făcut rapid și fără probleme, iar efectul a fost vizibil imediat. 
+        Suntem foarte mulțumiți și cu siguranță vom folosi această soluție și pe viitor!”
         </p>
         <span class="testi-bar"></span>
         <span class="testi-name">Lazlo</span>
